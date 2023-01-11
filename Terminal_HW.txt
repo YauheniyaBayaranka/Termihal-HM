@@ -1,0 +1,96 @@
+1) Посмотреть где я						*** pwd
+
+2) Создать папку						*** mkdir A1
+
+3) Зайти в папку						*** cd A1
+				
+4) Создать 3 папки						*** mkdir B1 B2 B3
+
+5) Зайти в любую папку						*** cd B1
+
+6) Создать 5 файлов (3 txt, 2 json)				*** touch f1.txt f2.txt f3.txt fl1.json fl2.json
+cat
+7) Создать 3 папки						*** mkdir D1 D2 D3
+
+8. Вывести список содержимого папки				*** ls -la
+                                                                 total 4
+drwxr-xr-x 1 Олег 197609 0 Jan 11 16:12 ./
+drwxr-xr-x 1 Олег 197609 0 Jan 11 16:12 ../
+drwxr-xr-x 1 Олег 197609 0 Jan 11 16:12 D1/
+drwxr-xr-x 1 Олег 197609 0 Jan 11 16:12 D2/
+drwxr-xr-x 1 Олег 197609 0 Jan 11 16:12 D3/
+-rw-r--r-- 1 Олег 197609 0 Jan 11 16:12 f1.txt
+-rw-r--r-- 1 Олег 197609 0 Jan 11 16:12 f2.txt
+-rw-r--r-- 1 Олег 197609 0 Jan 11 16:12 f3.txt
+-rw-r--r-- 1 Олег 197609 0 Jan 11 16:12 fl1.json
+-rw-r--r-- 1 Олег 197609 0 Jan 11 16:12 fl2.json
+
+
+
+
+9) + Открыть любой txt файл					*** vim f1.txt
+
+10) + написать туда что-нибудь, любой текст.			*** i
+										Hey! I love you my friend! Do not give up.
+
+11) + сохранить и выйти						*** ESC   :wq
+	
+12) Выйти из папки на уровень выше				*** cd ..
+
+				
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку				*** mv B1/f2.txt B1/fl2.json B2
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.			*** cp B1/f1.txt B1/fl1.json B3
+
+15) Найти файл по имени										*** find /d/QA_Free_VK_course -name "f1.txt"
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает		*** less +F B1/f1.txt  (q - выйти)
+
+17) вывести несколько первых строк из текстового файла						*** head -n 3 B1/f1.txt
+
+18) вывести несколько последних строк из текстового файла					*** tail -n 3 B1/f1.txt
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает		*** less B1/f1.txt
+
+20) вывести дату и время									*** date									
+=========
+
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+***  
+curl http://162.55.220.72:5005/terminal-hw-request 
+			 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 			Dload  Upload   Total   Spent    Left  Speed
+			100   237  100   237    0     0   2704      0 --:--:-- --:--:-- --:--:--  2755{"Intro
+			":"Hello!! This is your the first response from server","Tasks":{"Task_1":"Send the n
+			ext URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=
+			(set_your_number)","result":["Your_String","Your_number"]}}
+
+ curl "http://162.55.220.72:5005/get_method?name=Eva&age=28"
+		 	% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 			Dload  Upload   Total   Spent    Left  Speed
+100    20  100    20    0     0     71      0 --:--:-- --:--:-- --:--:--    71["Eva","28"]
+	
+	
+
+
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+
+***
+cat >>myscript.sh
+
+#!/bin//sh
+cd A1
+mkdir B1 B2 B3
+cd B1
+touch f1.txt f2.txt f3.txt fl1.json fl2.json
+mkdir D1 D2 D3
+ls -la
+cd ..
+mv B1/f2.txt B1/ff2.json B2
+
+./ myscript.sh
