@@ -6,7 +6,7 @@
 				
 4) Создать 3 папки						*** mkdir B1 B2 B3
 
-5) Зайти в любую папку						*** cd B1
+5) Зайти в любую папку						** cd B1
 
 6) Создать 5 файлов (3 txt, 2 json)				*** touch f1.txt f2.txt f3.txt fl1.json fl2.json
 cat
